@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thumbnail Carousel</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div class="lightbox-container">
+    <div class="lightbox">
+      <span class="close-button" onclick="closeLightbox()">&times;</span>
+      <button class="prev-button" onclick="prevImage()">&#8249;</button>
+      <img class="carousel-image" src="./images/image-product-1.jpg" alt="Image 1">
+      <button class="next-button" onclick="nextImage()">&#8250;</button>
+    </div>
+    <div class="thumbnails">
+      <div class="thumbnail" onclick="openLightbox(0)">
+        <img src="./images/image-product-1-thumbnail.jpg" alt="Thumbnail 1">
+      </div>
+      <div class="thumbnail" onclick="openLightbox(1)">
+        <img src="./images/image-product-2-thumbnail.jpg" alt="Thumbnail 2">
+      </div>
+      <div class="thumbnail" onclick="openLightbox(2)">
+        <img src="./images/image-product-3-thumbnail.jpg" alt="Thumbnail 3">
+      </div>
+      <div class="thumbnail" onclick="openLightbox(3)">
+        <img src="./images/image-product-4-thumbnail.jpg" alt="Thumbnail 3">
+      </div>
+      <!-- Add more thumbnails as needed -->
+    </div>
+  </div>
+  <script src="./main.js"></script>
+</body>
+</html>
