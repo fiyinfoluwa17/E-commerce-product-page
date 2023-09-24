@@ -50,7 +50,8 @@ function activateThumbnail(thumbnailIndex) {
     thumbnails[thumbnailIndex - 0].classList.add("active");
   }
 
-
+  // Initialize the lightbox with the first thumbnail image
+  activateThumbnail(0)
 
   ///////////////////////////////////////////////////////////////
   /////////////////JS FOR ORDER QUANTITY//////////////////////
