@@ -1,3 +1,6 @@
+/////////JS FOR LIGHTBOX IMAGE AND  THUMBNAILS
+//////////////////////////////////////////////////////////////////////
+
 const lightboxContainer = document.querySelector('.lightbox-container');
 const lightbox = document.querySelector('.lightbox');
 const carouselImage = lightbox.querySelector('.carousel-image');
@@ -20,31 +23,7 @@ function openLightbox(index) {
   const imageSrc = carouselImages[index];
   carouselImage.src = imageSrc;
   lightbox.style.display = 'block';
-  // Show thumbnail prev and next buttons
-  prevButton.style.display = 'block';
-  nextButton.style.display = 'block';
 }
-
-// Function to close the lightbox
-function closeLightbox() {
-  lightbox.style.display = 'none';
-  // Hide thumbnail prev and next buttons
-  prevButton.style.display = 'none';
-  nextButton.style.display = 'none';
-}
-
-// Function to navigate to the previous image
-function prevImage() {
-  currentImageIndex = (currentImageIndex - 1 + carouselImages.length) % carouselImages.length;
-  openLightbox(currentImageIndex);
-}
-
-// Function to navigate to the next image
-function nextImage() {
-  currentImageIndex = (currentImageIndex + 1) % carouselImages.length;
-  openLightbox(currentImageIndex);
-}
-
 // Initialize the lightbox with the first thumbnail image
 openLightbox(0);
 
@@ -55,15 +34,49 @@ thumbnails.forEach((thumbnail, index) => {
   });
 });
 
-// Handle keyboard navigation for the lightbox
-document.addEventListener('keydown', (event) => {
-  if (lightbox.style.display === 'block') {
-    if (event.key === 'Escape') {
-      closeLightbox();
-    } else if (event.key === 'ArrowLeft') {
-      prevImage();
-    } else if (event.key === 'ArrowRight') {
-      nextImage();
+
+////////////////////////////////////////////////////////////////////////
+///////////////JS FOR ACTIVE THUMBNAIL BORDER COLOR/////////////////////
+
+
+function activateThumbnail(thumbnailIndex) {
+    // Remove the active class from all thumbnails
+    var thumbnails = document.getElementsByClassName("thumbnail");
+    for (var i = 0; i < thumbnails.length; i++) {
+      thumbnails[i].classList.remove("active");
     }
+  
+    // Add the active class to the clicked thumbnail
+    thumbnails[thumbnailIndex - 0].classList.add("active");
   }
-});
+
+  // Initialize the lightbox with the first thumbnail image
+  activateThumbnail(0)
+
+  ///////////////////////////////////////////////////////////////
+  /////////////////JS FOR ORDER QUANTITY//////////////////////
+  const decrementButton = document.getElementById('decrement');
+        const incrementButton = document.getElementById('increment');
+        const quantityElement = document.getElementById('quantity');
+
+        let quantity = 0;
+
+        decrementButton.addEventListener('click', () => {
+            if (quantity > 0) {
+                quantity--;
+                quantityElement.innerText = quantity;
+            }
+        });
+
+        incrementButton.addEventListener('click', () => {
+            quantity++;
+            quantityElement.innerText = quantity;
+        });
+
+        // JavaScript for adding to cart (you can implement your cart logic here)
+        const addToCartButton = document.getElementById('addToCart');
+
+        addToCartButton.addEventListener('click', () => {
+            // Add your cart logic here
+            alert(`Added ${quantity} item(s) to the cart.`);
+        });
