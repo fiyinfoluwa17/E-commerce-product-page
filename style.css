@@ -25,6 +25,42 @@
     font-family: "Kumbh Sans", sans-serif !important;
 
   }
+  body{
+    margin-left: 10%;
+    margin-right: 10%;
+}
+li .image2 img{
+    margin-left: 40%;
+    width: 100%; 
+}
+li .image img{
+    margin-top: 50%;
+}
+.heading{
+    display: flex;
+    width: 90%;
+}
+.cart{
+    width: 10%;
+    display: flex;
+}
+.heading{
+    width: 100%;
+    justify-content: space-between;
+    padding-top: 15px;
+}
+.heading .snickers{
+    display: none;
+}
+.dropdown-menu img{
+    width: 40px;
+    border-radius: 2px;
+}
+
+  /* TURN OFF MOBILE VIEW */
+  .mobile-container{
+    display: none;
+  }
 
 
 /* CSS for layout */
@@ -38,7 +74,9 @@
 }
 
 
-
+#carouselExample{
+  display: none;
+}
   .lightbox {
     flex: 1;
     max-width: 50%;
@@ -76,6 +114,7 @@
 
 .thumbnail.active{
   border: 2px solid orange;
+  border-radius: 18px;
 }
 
 
@@ -126,6 +165,7 @@
     color: var(--Orange);
     padding: 0.2rem 0.4rem;
     font-size: 0.7rem;
+    border-radius: 4px;
   }
   .old-price {
     font-size: 0.8rem;
@@ -207,11 +247,117 @@
 /* MEDIA QUERY FOR MOBILE */
 
 @media (max-width: 768px){
+  body{
+    margin: auto;
+}
+nav{
+    width: 100%;
+}
+.heading{
+    width: 70%;
+    display: flex;
+    padding-top: 0;
+}
+.logo{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row-reverse;
+}
+.logo .snickers img{
+ margin-right: 20px;
+ margin-left: 20px;
+}
+.cart{
+    width: 30%;
+}
+li .image2 img{
+    margin-left: 20%;
+    width: 50%; 
+    margin-top: 13%;
+}
+.heading .snickers{
+    display: block;
+}
+hr{
+    display: none;
+}
+.offcanvas-body{
+    color: var(--Very-dark-blue);
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+.offcanvas-header img{
+    margin-right: 100%;
+}
     body{
         background-color: var(--White);
     }
+    
     .product-container{
-        background-color: var(--Orange);
-        display: none;
-    }
+      /* background-color: var(--Orange); */
+      display: block;
+      justify-content: center;
+  align-items: center;
+  width: 100%;
+  
+  }
+  .lightbox{
+    display: none;
+    flex: none;
+  max-width: 100%;
+  align-items: center;
+  }
+  .lightbox img{
+    display: none;
+  }
+  .thumbnail{
+    display: none;
+}
+#carouselExample{
+  display: block;
+}
+.product-details{
+  flex: 0;
+    padding: 0px;
+    box-sizing: none;
+    margin-left: auto;
+    justify-content: center;
+    align-items: center;
+}
+.product-details h3{
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.5rem;
+  font-weight: 700;
+  color: var(--Orange);
+}
+.product-details h2{
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+
+.product-details .description{
+  font-size: 0.9rem !important;
+}
+
+.price-section .old-price{
+  display: flex;
+  margin-left: 12rem;
+  margin-top: -3.5rem;
+}
+
+.add-to-cart .order{
+  display: flex;
+  
+}
+.add-to-cart{
+display: block;
+}
+.add-to-cart{
+  align-items: center;
+}
+
+
+
+
 }
