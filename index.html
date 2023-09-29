@@ -5,7 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="stylesheet" href="./commerce.css">
+
   <title>Frontend Mentor | E-commerce product page</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
@@ -15,30 +17,159 @@
   </style>
 </head>
 <body>
-
-  Collections
-  Men
-  Women
-  About
-  Contact
-
-  Sneaker Company
-
-  Fall Limited Edition Sneakers
-
-  These low-profile sneakers are your perfect casual wear companion. Featuring a 
-  durable rubber outer sole, they’ll withstand everything the weather can offer.
-
-  $125.00
-  50%
-  $250.00
-
-  0
-  Add to cart
   
+  <div class="offcanvas offcanvas-start w-50" tabindex="-1" id="offcanvas" aria-labelledby="offcanvasLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasLabel"></h5>
+      <img data-bs-dismiss="offcanvas" src="./images/icon-close.svg" alt="">
+    </div>
+    <div class="offcanvas-body">
+        <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 200px;">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Collections</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Men</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link active" href="#">Women</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="#">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  <nav class="navbar navbar-expand-lg">
+    <div class="heading">
+      <div class="logo">
+      <a class="nav-brand" href="#"><img src="./images/logo.svg" alt=""></a>
+      <a class="snickers" data-bs-toggle="offcanvas" data-bs-target="#offcanvas" href=""><img src="./images/icon-menu.svg" alt=""></a>
+    </div>
+      <div class="collapse navbar-collapse" id="navbarScroll">
+        <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 200px;">
+          <li class="nav-item">
+            <a class="nav-link active ms-5" aria-current="page" href="#">Collections</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active ms-4" href="#">Men</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link active ms-4" href="#">Women</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active ms-4" href="#">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active ms-4" href="#">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="cart">
+    <li class="nav-item">
+      <div class="dropdown-center ">
+        <button type="button" class="btn position-relative bg-none mt-2" data-bs-toggle="dropdown">
+          <img src="./images/icon-cart.svg" alt="">
+          <span id="icon-no" class="position-absolute mt-2 top-0 start-80 translate-middle badge rounded-pill">
+            <span id="badge">0</span>
+            <span class="visually-hidden">unread messages</span>
+          </span>
+        </button>
+        <div class="dropdown-menu shadow shadow-lg dropdown-menu-end" style="width: 300px; height: 200px;">
+           <div class="cart-container" id="cartContainer">
+            <div class="cart-title">Cart</div> <hr>
+            <div class="cart-items" id="cartItems">
+                <!-- Cart items will be dynamically added here -->
+             </div>
+            <div class="cart-total" id="cartTotal">Total: $0.00</div>
+            <a href="#" id="checkout-button" class="checkout-button">Checkout</a>
+       </div> 
+        </div>
+      </div>
+    </li>
+    <li class="nav-item">
+      <a class="image2" href="#"><img src="./images/image-avatar.png" alt=""></a>
+    </li>
+  </div>
+  </nav>
+  <hr>
+  <div class="product-container">
+    <div class="lightbox">
+      <img class="carousel-image" src="./images/image-product-1.jpg" alt="Image 1">
+          <div class="thumbnails">
+            <div class="thumbnail" onclick="openLightbox(0)">
+              <img src="./images/image-product-1-thumbnail.jpg" alt="Thumbnail 1"onclick="activateThumbnail(0)">
+            </div>
+            <div class="thumbnail" onclick="openLightbox(1)">
+              <img src="./images/image-product-2-thumbnail.jpg" alt="Thumbnail 2"onclick="activateThumbnail(1)">
+            </div>
+            <div class="thumbnail" onclick="openLightbox(2)">
+              <img src="./images/image-product-3-thumbnail.jpg" alt="Thumbnail 3" onclick="activateThumbnail(2)">
+            </div>
+            <div class="thumbnail" onclick="openLightbox(3)">
+              <img src="./images/image-product-4-thumbnail.jpg" alt="Thumbnail 4"  onclick="activateThumbnail(3)">
+            </div>
+            <!-- Add more thumbnails as needed -->
+          </div>
+          <div id="carouselExample" class="carousel slide">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="./images/image-product-1.jpg" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="./images/image-product-2.jpg" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="./images/image-product-3.jpg" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="./images/image-product-4.jpg" class="d-block w-100" alt="...">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+    </div>
+    <div class="product-details">
+        <h3>Sneaker Company</h3>
+        <h2 class="product-text">Fall Limited Edition Sneakers</h2>
+        <p class="description">These low-profile sneakers are your perfect casual wear companion. Featuring a 
+          durable rubber outer sole, they'll withstand everything the weather can offer.</p>
+        <div class="price-section">
+          <div class="price">$125.00 <span class="discount">50%</span></div>
+          <div class="old-price"> <del>$250.00</del></div>
+        </div>
+        
+        <div class="add-to-cart">
+          <div class="order">
+            <button id="decrement">-</button>
+            <span id="quantity">0</span>
+            <button id="increment">+</button>
+        </div>
+        <div class="adder">
+            <a id="addToCart"> <img src="./images/icon-cart.svg" class="" ><b>Add to cart</b></a>
+          </div>
+        </div>
+    </div>
+</div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+<script src="./commerce.js"></script>
+<script src="./java.js"></script>
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+    Coded by <a href="#">Rule Breakers</a>.
   </div>
 </body>
 </html>
