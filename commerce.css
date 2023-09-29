@@ -299,7 +299,7 @@ li .image img{
     display: none;
 }
 
-@media (min-width: 430px){
+@media (max-width: 430px){
     body{
         margin: auto;
     }
