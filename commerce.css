@@ -410,13 +410,17 @@ li .image img{
         margin-top: 20px;
     }
     #carouselExample{
-        width: 390px;
-        height: 300px;
+        width: auto;
+        height: auto;
         display: block;
-        margin-top: none !important;
+        /* margin-top: none !important; */
     }
-    .carousel-inner img{
+    .lightbox{
+        max-width: 100%;
+    }
+    .carousel-item img{
         height: 300px;
+        width: 100%;
     }
     .controlprev{
         position: relative;
