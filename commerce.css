@@ -334,6 +334,9 @@ li .image img{
     hr{
         display: none;
     }
+    .dodo{
+        display: block;
+    }
     .offcanvas-body{
         color: var(--Very-dark-blue);
         font-size: 1.1rem;
@@ -395,6 +398,9 @@ li .image img{
         margin-right: 10px;
     }
     .add-to-cart a{
+        display: flex;
+        justify-content: center; 
+        text-align: center;   
         width: 100%;
         height: 60px;
         margin-top: 10px;
@@ -403,17 +409,16 @@ li .image img{
     .add-to-cart a b{
         font-size: 17px;
         margin-top: 10px;
+        margin-right: 20px;
     }
     .add-to-cart a img{
         display: block;
-        margin-left: 50px;
         margin-top: 20px;
     }
     #carouselExample{
         width: auto;
         height: auto;
         display: block;
-        /* margin-top: none !important; */
     }
     .lightbox{
         max-width: 100%;
